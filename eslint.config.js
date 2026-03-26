@@ -1,7 +1,7 @@
 import config from '@tada5hi/eslint-config';
 
 export default [
-    ...config,
+    ...await config(),
     {
         ignores: ['dist/**'],
     },
