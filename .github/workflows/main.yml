@@ -7,13 +7,14 @@ on:
         branches: [develop, master, next, beta, alpha]
 
 permissions:
-    packages: write
-    contents: write
-    issues: write
-    pull-requests: write
+    contents: read
+
+concurrency:
+    group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+    cancel-in-progress: true
 
 env:
-    PRIMARY_NODE_VERSION: 18
+    PRIMARY_NODE_VERSION: 22
 
 jobs:
     install:
@@ -26,26 +27,6 @@ jobs:
               uses: ./.github/actions/install
               with:
                   node-version: ${{ env.PRIMARY_NODE_VERSION }}
-
-    lint:
-        name: Lint
-        needs: [build]
-        runs-on: ubuntu-latest
-        steps:
-            -   name: Checkout
-                uses: actions/checkout@v4
-
-            -   name: Install
-                uses: ./.github/actions/install
-                with:
-                    node-version: ${{ env.PRIMARY_NODE_VERSION }}
-
-            -   name: Build
-                uses: ./.github/actions/build
-
-            -   name: Lint
-                run: |
-                    npm run lint
 
     build:
         name: Build
@@ -61,72 +42,42 @@ jobs:
             - name: Build
               uses: ./.github/actions/build
 
+    lint:
+        name: Lint
+        needs: [build]
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+
+            - name: Install
+              uses: ./.github/actions/install
+              with:
+                  node-version: ${{ env.PRIMARY_NODE_VERSION }}
+
+            - name: Build
+              uses: ./.github/actions/build
+
+            - name: Lint
+              run: |
+                  npm run lint
+
     tests:
         name: Test
         needs: [build]
         runs-on: ubuntu-latest
         steps:
-            -   name: Checkout
-                uses: actions/checkout@v4
+            - name: Checkout
+              uses: actions/checkout@v4
 
-            -   name: Install
-                uses: ./.github/actions/install
-                with:
-                    node-version: ${{ env.PRIMARY_NODE_VERSION }}
+            - name: Install
+              uses: ./.github/actions/install
+              with:
+                  node-version: ${{ env.PRIMARY_NODE_VERSION }}
 
-            -   name: Build
-                uses: ./.github/actions/build
+            - name: Build
+              uses: ./.github/actions/build
 
-            -   name: Run tests
-                run: |
-                    npm run test
-
-    release:
-        name: Release
-        needs: [lint, tests]
-        runs-on: ubuntu-latest
-        steps:
-            -   name: Checkout
-                uses: actions/checkout@v4
-
-            -   name: Install
-                uses: ./.github/actions/install
-                with:
-                    node-version: ${{ env.PRIMARY_NODE_VERSION }}
-
-            -   name: Build
-                uses: ./.github/actions/build
-
-            #-   name: Release
-                #env:
-                #    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-                #    NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-                #
-                # run: npx semantic-release
-
-    coverage:
-        name: Coverage
-        needs: [release]
-        runs-on: ubuntu-latest
-        if: ${{ github.ref_name == 'master' }}
-        steps:
-            -   name: Checkout
-                uses: actions/checkout@v4
-
-            -   name: Install
-                uses: ./.github/actions/install
-                with:
-                    node-version: ${{ env.PRIMARY_NODE_VERSION }}
-
-            -   name: Build
-                uses: ./.github/actions/build
-
-            -   name: Coverage
-                run: |
-                    npm run test:coverage
-
-            #-   name: Upload report
-            #    uses: codecov/codecov-action@v3.1.4
-            #    with:
-            #        token: ${{ secrets.codecov }}
-            #        directory: ./coverage/
+            - name: Run tests
+              run: |
+                  npm run test
