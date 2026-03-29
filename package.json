@@ -36,6 +36,9 @@
         "prepare": "husky"
     },
     "keywords": [],
+    "publishConfig": {
+        "access": "public"
+    },
     "license": "MIT",
     "devDependencies": {
         "@tada5hi/commitlint-config": "^1.3.1",
