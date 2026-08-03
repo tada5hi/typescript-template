@@ -49,7 +49,8 @@ There are **no runtime dependencies** — the published package must stay depend
 | Dev dependency                | Role                                                                 |
 |-------------------------------|----------------------------------------------------------------------|
 | `tsdown`                      | Bundler; emits `dist/index.mjs`, `dist/index.d.mts`, and sourcemaps  |
-| `vitest`                      | Test runner and coverage (v8 provider)                               |
+| `vitest`                      | Test runner                                                          |
+| `@vitest/coverage-v8`         | Coverage provider; required by `npm run test:coverage`               |
 | `typescript`                  | Type checking (`noEmit`) and declaration generation input            |
 | `eslint` + `typescript-eslint`| Linting                                                              |
 | `@tada5hi/eslint-config`      | Shared flat ESLint config                                            |
