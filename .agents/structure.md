@@ -15,7 +15,7 @@ typescript-template/
 ├── dist/                            # Build output (git-ignored, produced by tsdown)
 ├── .github/
 │   ├── assets/
-│   │   └── rocket.svg           # README header icon (referenced by relative path)
+│   │   └── logo.svg             # README header logo (referenced by relative path)
 │   ├── actions/
 │   │   ├── install/action.yml       # Composite action: setup-node + cache + npm ci
 │   │   └── build/action.yml         # Composite action: cache dist/ by SHA + npm run build

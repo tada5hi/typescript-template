@@ -1,10 +1,16 @@
-# typescript-template <img src=".github/assets/rocket.svg" alt="" height="28" align="middle">
+<p align="center">
+    <img src=".github/assets/logo.svg" alt="" width="96" height="96">
+</p>
 
-[![npm version][npm-version-src]][npm-version-href]
-[![npm version][codecov-src]][codecov-href]
-[![Master Workflow][workflow-src]][workflow-href]
-[![Known Vulnerabilities][snyk-src]][snyk-href]
-[![Conventional Commits][conventional-src]][conventional-href]
+<h1 align="center">typescript-template</h1>
+
+<p align="center">
+    <a href="https://npmjs.com/package/typescript-template"><img src="https://badge.fury.io/js/typescript-template.svg" alt="npm version"></a>
+    <a href="https://codecov.io/gh/Tada5hi/typescript-template"><img src="https://codecov.io/gh/Tada5hi/typescript-template/branch/master/graph/badge.svg?token=4KNSG8L13V" alt="Coverage"></a>
+    <a href="https://github.com/Tada5hi/typescript-template"><img src="https://github.com/Tada5hi/typescript-template/workflows/CI/badge.svg" alt="Master Workflow"></a>
+    <a href="https://snyk.io/test/github/Tada5hi/typescript-template?targetFile=package.json"><img src="https://snyk.io/test/github/Tada5hi/typescript-template/badge.svg?targetFile=package.json" alt="Known Vulnerabilities"></a>
+    <a href="https://conventionalcommits.org"><img src="https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?logo=conventionalcommits&amp;logoColor=white" alt="Conventional Commits"></a>
+</p>
 
 This is a package to ...
 
@@ -35,14 +41,3 @@ These guidelines will help to ensure that contributions are made effectively and
 Made with 💚
 
 Published under [MIT License](./LICENSE).
-
-[npm-version-src]: https://badge.fury.io/js/typescript-template.svg
-[npm-version-href]: https://npmjs.com/package/typescript-template
-[codecov-src]: https://codecov.io/gh/Tada5hi/typescript-template/branch/master/graph/badge.svg?token=4KNSG8L13V
-[codecov-href]: https://codecov.io/gh/Tada5hi/typescript-template
-[workflow-src]: https://github.com/Tada5hi/typescript-template/workflows/CI/badge.svg
-[workflow-href]: https://github.com/Tada5hi/typescript-template
-[snyk-src]: https://snyk.io/test/github/Tada5hi/typescript-template/badge.svg?targetFile=package.json
-[snyk-href]: https://snyk.io/test/github/Tada5hi/typescript-template?targetFile=package.json
-[conventional-src]: https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?logo=conventionalcommits&logoColor=white
-[conventional-href]: https://conventionalcommits.org
