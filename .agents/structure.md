@@ -14,6 +14,8 @@ typescript-template/
 │   └── vitest.config.ts             # Vitest config — note: NOT in the project root
 ├── dist/                            # Build output (git-ignored, produced by tsdown)
 ├── .github/
+│   ├── assets/
+│   │   └── rocket.svg           # README header icon (referenced by relative path)
 │   ├── actions/
 │   │   ├── install/action.yml       # Composite action: setup-node + cache + npm ci
 │   │   └── build/action.yml         # Composite action: cache dist/ by SHA + npm run build

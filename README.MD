@@ -1,4 +1,4 @@
-# typescript-template 🚀
+# typescript-template <img src=".github/assets/rocket.svg" alt="" height="28" align="middle">
 
 [![npm version][npm-version-src]][npm-version-href]
 [![npm version][codecov-src]][codecov-href]
