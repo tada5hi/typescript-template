@@ -65,7 +65,7 @@ Commits follow **[Conventional Commits](https://www.conventionalcommits.org)** �
 
 - `fix:` → patch bump. `feat:` → minor bump. `!` or a `BREAKING CHANGE:` footer → minor while pre-1.0 (`bump-minor-pre-major` is set), major afterwards.
 - `build:`, `chore:`, `ci:`, `docs:`, `style:`, `refactor:`, `test:` → no release.
-- Dependabot is configured to use `fix` for production deps and `build` for dev deps, with the scope included — match that when bumping dependencies by hand (e.g. `build(deps-dev): bump vitest to v4`).
+- Dependabot is configured to use `fix` for production deps and `build` for dev deps, with the scope included — match that when bumping dependencies by hand (e.g. `build(deps-dev): bump vitest`).
 
 ## TypeScript
 
