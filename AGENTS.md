@@ -20,7 +20,8 @@ npm run lint           # eslint
 npm run lint:fix       # eslint --fix
 ```
 
-- **Node.js**: `>=22.0.0` (CI runs on 24)
+- **Node.js (package runtime)**: `>=22.0.0` (CI runs on 24)
+- **Node.js (development tooling)**: `^24.11.0 || >=26.0.0`; `.nvmrc` selects Node 24.
 - **Package manager**: npm (`package-lock.json` is committed; use `npm ci` in CI)
 - **Build tool**: [tsdown](https://tsdown.dev) — no build orchestrator, this is a single package
 
