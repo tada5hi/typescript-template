@@ -1,5 +1,7 @@
 <!-- NOTE: Keep this file and all corresponding files in the .agents directory updated as the project evolves. When making architectural changes, adding new patterns, or discovering important conventions, update the relevant sections. -->
 
+Use this guide as the entry point. Read linked guides on demand before changing their areas.
+
 # typescript-template — Agent Guide
 
 A minimal, opinionated scaffold for publishing ESM-only TypeScript libraries to npm. It is a **template repository**: new packages are created from it and then have their `src/` replaced with real code. The shipped `src/index.ts` (a single `add()` function) and its spec exist only to prove the toolchain works end to end — build, test, coverage, lint, release.
