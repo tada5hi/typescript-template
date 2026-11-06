@@ -27,7 +27,7 @@ typescript-template/
 ├── .husky/                          # Git hooks dir (core.hooksPath); no hooks are committed
 ├── .agents/                         # Agent guides (this directory)
 ├── AGENTS.md                        # Agent entry point
-├── CLAUDE.md                        # Manifest that loads AGENTS.md; guides are linked there
+├── CLAUDE.md                        # Manifest that loads AGENTS.md + .agents/*.md
 ├── tsconfig.json                    # extends @tada5hi/tsconfig; noEmit
 ├── tsdown.config.ts                 # Bundler config (esm, dts, sourcemap)
 ├── eslint.config.js                 # Flat config wrapping @tada5hi/eslint-config
